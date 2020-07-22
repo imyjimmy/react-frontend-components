@@ -14,13 +14,17 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react-app": "^9.0.0",
     "babel-preset-nano-react-app": "^0.1.0",
+    "babel-preset-react-app": "^9.0.0",
     "css-loader": "^3.1.0",
     "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
@@ -48,7 +52,9 @@
     "dev": "webpack-dev-server --env.mode development --config webpack.dev.js",
     "build": "webpack --env.mode production --config webpack.prod.js",
     "clean": "rm -rf build",
-    "format": "find src \\( -name '*.js' -or -name '*.jsx' \\) -exec yarn prettier --write {} +"
+    "format": "find src \\( -name '*.js' -or -name '*.jsx' \\) -exec yarn prettier --write {} +",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "babel": {
     "presets": [
@@ -67,6 +73,18 @@
           "pragmaFrag": "React.Fragment"
         }
       ]
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
